@@ -11,7 +11,6 @@ pipeline {
     stage ('Build'){
       steps {
         sh "ant -f build.xml -v"
-        sh "pwd"
       }
     }
     stage ('Deploy'){
