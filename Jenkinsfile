@@ -9,5 +9,8 @@ pipeline {
         junit 'reports/*.xml'
       }
     }
+    stage ('Build'){
+      ant
+    }
   }
 }
