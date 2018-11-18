@@ -9,7 +9,9 @@ pipeline {
       }
     }
     stage ('Build'){
-      sh "ant -f build.xml -v"
+      steps {
+        sh "ant -f build.xml -v"
+      }
     }
   }
 }
