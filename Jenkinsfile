@@ -15,7 +15,9 @@ pipeline {
       }
     }
     stage {'Deploy') {
-      aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://jenkins-java/rectangle.jar
+      steps {
+        aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://jenkins-java/rectangle.jar
+      }
     }
   }
 }
