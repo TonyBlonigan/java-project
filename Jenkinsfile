@@ -14,9 +14,9 @@ pipeline {
         sh "pwd"
       }
     }
-    stage {'Deploy') {
+    stage ('Deploy'){
       steps {
-        aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://jenkins-java/rectangle.jar
+        sh "aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://jenkins-java/rectangle.jar"
       }
     }
   }
