@@ -19,5 +19,10 @@ pipeline {
         sh "aws s3 cp dist/rectangle-${BUILD_NUMBER}.jar s3://jenkins-java/rectangle.jar"
       }
     }
+    stage ('Report'){
+      steps {
+        sh "aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins"
+      }
+    }
   }
 }
