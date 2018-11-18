@@ -2,9 +2,10 @@ pipeline {
   agent { label 'linux' }
 
   stages {
-    stage ('Test'){ 
+    stage ('Unit Tests'){ 
       steps {   
-        sh "echo 'Hello'"
+        sh "ant -f test.xml -v"
+        sh "junit 'reports/result.xml'"
       }
     }
   }
